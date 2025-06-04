@@ -24,6 +24,8 @@ pushq %rdx
 pushq %rcx
 pushq %rbx
 pushq %rax
+
+pre_call:
 call _debug_dump_registers
 addq $(16*8), %rsp
 ret
