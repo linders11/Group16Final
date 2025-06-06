@@ -1,6 +1,9 @@
+.extern _dump_backtrace
 .globl dump_backtrace
 .type dump_backtrace, @function
+
 dump_backtrace:
+call _dump_backtrace
 ret
 
 
