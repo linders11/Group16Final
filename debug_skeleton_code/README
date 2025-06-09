@@ -1,7 +1,0 @@
-TODO
-Group 16 Collaborators: Stevenson Linder, Abraham Smith, Adam Ewert
-
-
-Write a readme describing your project. Find an open source project on github for inspiration.
-
-This project is a combination of assembly language and C programs to be able to print debug data of registers with a simple function call while inside a running program. The first program, dump_registers.s, will dump the name, value, and value (in hexadecimal format) of the registers: rax, rbx, rcx, rdx, rsi, rdi, rbp, rsp, r8–r15. The second program, dump_backtrace.s, will walk back through the stack and print the call history until it reaches the beginning (%rbp = NULL), or until the stack frame reaches 64 which is a pretty reasonable amount for most programs.
