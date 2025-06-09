@@ -4,7 +4,7 @@
 dump_registers:
 /*Need to implement in this order: rax, rbx, rcx, rdx, rsi, rdi, rbp, rsp, r8–r15*/ 
 
-subq $(16*8), %rsp
+subq $8, %rsp
 movq %rsp, %rdi
 /*push all register values to the stack to print the values. must be reverse
 order due to the nature of stacks*/
@@ -25,7 +25,11 @@ pushq %rcx
 pushq %rbx
 pushq %rax
 /* this label was to make sure it was pushing the register values properly */
+/* rsp being in the middle also makes it a bit awkward to test it using info registers and x/16gx , but it has been off by the same multiple of 8 each time so I think it's right */
 pre_call:
 call _debug_dump_registers
-addq $(16*8), %rsp
+/* 8 bytes to the stack pointer to account for the pushed registers
+   and the 8 bytes i subtracted at the beginning */
+addq $136, %rsp
+/* that took forever to figure out */
 ret
