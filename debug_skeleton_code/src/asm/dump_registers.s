@@ -24,7 +24,7 @@ pushq %rdx
 pushq %rcx
 pushq %rbx
 pushq %rax
-
+/* this label was to make sure it was pushing the register values properly */
 pre_call:
 call _debug_dump_registers
 addq $(16*8), %rsp
